@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austin Thauzeni - Modern Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .navbar {
+      background-color: #343a40 !important;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
+    .section-title {
+      color: #343a40;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .project-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    .icon-large {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #343a40, #6c757d);
+      color: #fff;
+      padding: 100px 0;
+    }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+    .hero-section p {
+      font-size: 1.5rem;
+    }
+    .btn-primary {
+      background-color: #0d6efd;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+    }
+    .btn-primary:hover {
+      background-color: #0b5ed7;
+    }
+    .project-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .carousel-inner img {
+    border-radius: 10px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .btn-primary:hover {
+    background-color: #0b5ed7;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Austin Thauzeni</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4 fade-in">Austin Thauzeni</h1>
+      <p class="lead fade-in">Full Stack Software Engineer</p>
+      <a href="#contact" class="btn btn-primary btn-lg fade-in">Contact Me</a>
+    </div>
+  </header>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="section-title fade-in">About Me</h2>
+    <div class="row">
+      <div class="col-md-6 fade-in">
+        <p class="lead">
+          I am a <strong>Software and Machine Learning Engineer</strong> with a proven track record of delivering scalable, high-performance solutions across web and mobile platforms. With expertise in <strong>React (Next.js)</strong>, <strong>Flutter</strong>, <strong>C# (.NET)</strong>, and <strong>Python</strong>, I specialize in building innovative applications that solve complex problems and drive business growth.
+        </p>
+        <p class="lead">
+          Over the years, I have successfully led teams and developed cutting-edge applications, including <strong>mobile news platforms</strong>, <strong>eCommerce systems</strong>, and <strong>machine learning models</strong>. My experience spans industries such as media, healthcare, and eCommerce, where I have modernized legacy systems, optimized workflows, and implemented cloud-based architectures.
+        </p>
+        <p class="lead">
+          I am passionate about leveraging technology to create impactful solutions. Whether it’s designing intuitive user interfaces, architecting robust backend systems, or deploying machine learning algorithms.
+        </p>
+        <a href="#contact" class="btn btn-primary btn-lg mt-3">Let's Connect</a>
+      </div>
+      <div class="col-md-6 fade-in">
+        <img src="images/profile.jpg" alt="Profile Image" class="img-fluid rounded shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title fade-in">Skills</h2>
+    <div class="row text-center">
+      <!-- Frontend Development -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-code icon-large text-primary"></i>
+            <h4 class="card-title">Frontend Development</h4>
+            <p class="card-text">
+              React.js, Next.js, Flutter, HTML, CSS, Bootstrap, Tailwind CSS
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Development -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-server icon-large text-primary"></i>
+            <h4 class="card-title">Backend Development</h4>
+            <p class="card-text">
+              C# (.NET), RESTful APIs, PHP (Laravel)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-database icon-large text-primary"></i>
+            <h4 class="card-title">Databases</h4>
+            <p class="card-text">
+              MySQL, MongoDB, Microsoft SQL Server, Redis
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevOps & Cloud -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-cloud icon-large text-primary"></i>
+            <h4 class="card-title">DevOps & Cloud</h4>
+            <p class="card-text">
+              Docker, Kubernetes
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-brain icon-large text-primary"></i>
+            <h4 class="card-title">Machine Learning</h4>
+            <p class="card-text">
+              Python, Keras, NLP
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Platforms -->
+      <div class="col-md-4 mb-4 fade-in">
+        <div class="card skill-card h-100">
+          <div class="card-body">
+            <i class="fas fa-tools icon-large text-primary"></i>
+            <h4 class="card-title">Tools & Platforms</h4>
+            <p class="card-text">
+              Git, GitHub, VS Code, Postman
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="section-title fade-in">Projects</h2>
+
+    <!-- Mobile Apps Section -->
+    <div class="row mb-5">
+      <h3 class="section-subtitle fade-in">Mobile Apps</h3>
+
+      <!-- Nation Online News App -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshots Carousel -->
+            <div class="col-md-6 p-3">
+              <div id="carousel-nation" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/enation1.png" class="d-block w-100 rounded" alt="Nation App Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/enation2.png" class="d-block w-100 rounded" alt="Nation App Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/enation3.png" class="d-block w-100 rounded" alt="Nation App Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-nation" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-nation" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Nation Online News App</h5>
+                <p class="card-text">
+                  A Flutter-based mobile news application for Nation Publications Limited. The app fetches news articles from a WordPress website via RESTful APIs, providing users with real-time updates and a seamless reading experience.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Flutter, Dart, RESTful APIs</p>
+                <a href="https://play.google.com/store/apps/details?id=com.mwnation.enation&pcampaignid=web_share" class="btn btn-primary" target="_blank">View on Play Store</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lizulu Ecommerce App -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshots Carousel -->
+            <div class="col-md-6 p-3">
+              <div id="carousel-lizulu" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/lizulu1.png" class="d-block w-100 rounded" alt="Lizulu App Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/lizulu2.png" class="d-block w-100 rounded" alt="Lizulu App Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/lizulu3.png" class="d-block w-100 rounded" alt="Lizulu App Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-lizulu" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-lizulu" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Lizulu Ecommerce App</h5>
+                <p class="card-text">
+                  A Flutter-based eCommerce app where customers can purchase products, and vendors can create accounts to upload and manage their products. Integrated with payment gateways for seamless transactions.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Flutter, Dart, Payment Gateway Integration</p>
+                <a href="https://www.upload-apk.com/gsC6smFY1Ql4IHt" class="btn btn-primary" target="_blank">Download App</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Apps Section -->
+    <div class="row mb-5">
+      <h3 class="section-subtitle fade-in">Web Apps</h3>
+
+      <!-- CloudiMart -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshots Carousel -->
+            <div class="col-md-6 p-3">
+              <div id="carousel-cloudimart" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/cloudimart1.png" class="d-block w-100 rounded" alt="CloudiMart Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/cloudimart2.png" class="d-block w-100 rounded" alt="CloudiMart Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/cloudimart3.png" class="d-block w-100 rounded" alt="CloudiMart Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-cloudimart" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-cloudimart" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">CloudiMart</h5>
+                <p class="card-text">
+                  A full-stack eCommerce platform built with Next.js (frontend) and Laravel (backend). Features include product listings, user authentication, payment gateway integration, and a MySQL database.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Next.js, Laravel, MySQL, Docker</p>
+                <a href="https://cloudimart.com/" class="btn btn-primary" target="_blank">Visit Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sexity -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshots Carousel -->
+            <div class="col-md-6 p-3">
+              <div id="carousel-sexity" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/sexity1.png" class="d-block w-100 rounded" alt="Sexity Screenshot 1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/sexity2.png" class="d-block w-100 rounded" alt="Sexity Screenshot 2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/sexity3.png" class="d-block w-100 rounded" alt="Sexity Screenshot 3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-sexity" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-sexity" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Sexity</h5>
+                <p class="card-text">
+                  A platform for creating ads and advertising services. Built with Next.js (frontend) and Laravel (backend), Dockerized for deployment, and hosted using Coolify.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Next.js, Laravel, Docker, MySQL</p>
+                <a href="https://sexity.co.za/" class="btn btn-primary" target="_blank">Visit Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Machine Learning Section -->
+    <div class="row mb-5">
+      <h3 class="section-subtitle fade-in">Machine Learning</h3>
+
+      <!-- Chitagger -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshot -->
+            <div class="col-md-6 p-3">
+              <img src="images/chitagger.png" class="d-block w-100 rounded" alt="Chitagger Screenshot">
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Chitagger</h5>
+                <p class="card-text">
+                  A parts-of-speech tagger for the Chichewa language, built using neural networks. It cleans, tokenizes, and tags sentences with high accuracy.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Python, NLP, Neural Networks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route Optimization Algorithm -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshot -->
+            <div class="col-md-6 p-3">
+              <img src="images/route-optimization.png" class="d-block w-100 rounded" alt="Route Optimization Screenshot">
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Route Optimization & Clustering Algorithm</h5>
+                <p class="card-text">
+                  A Python-based algorithm that clusters health centers using K-means clustering and optimizes routes for couriers delivering blood samples.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> Python, K-means Clustering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Systems Section -->
+    <div class="row mb-5">
+      <h3 class="section-subtitle fade-in">Systems</h3>
+
+      <!-- Human Resource Information System -->
+      <div class="col-md-12 mb-4 fade-in">
+        <div class="card project-card">
+          <div class="row g-0">
+            <!-- Screenshot -->
+            <div class="col-md-6 p-3">
+              <img src="images/hr-system.png" class="d-block w-100 rounded" alt="HR System Screenshot">
+            </div>
+            <!-- Project Description -->
+            <div class="col-md-6 p-3">
+              <div class="card-body">
+                <h5 class="card-title">Human Resource Information System</h5>
+                <p class="card-text">
+                  A .NET-based system for managing HR operations at Nation Publications Limited. Built with MongoDB for data storage.
+                </p>
+                <p class="card-text"><strong>Tech Stack:</strong> C# (.NET), MongoDB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Experience Section -->
+<section id="experience" class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title fade-in">Experience</h2>
+
+    <!-- Nation Publications Limited -->
+    <div class="row mb-4 fade-in">
+      <div class="col-md-12">
+        <div class="card experience-card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="card-title">Nation Publications Limited</h4>
+              <span class="badge bg-primary">April 2024 – Present</span>
+            </div>
+            <p class="card-subtitle mb-2 text-muted"><strong>Role:</strong> Software Engineer</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Engineered robust software solutions using <strong>C# and .NET</strong> to streamline business processes and improve system functionality.
+              </li>
+              <li class="list-group-item">
+                Developed <strong>microservice-based architecture</strong> using <strong>Docker</strong> and <strong>Kubernetes</strong> to enhance system scalability and maintainability.
+              </li>
+              <li class="list-group-item">
+                Designed and launched a <strong>mobile news application</strong> using <strong>Flutter</strong>, increasing audience engagement and improving user experience.
+              </li>
+              <li class="list-group-item">
+                Coordinated closely with internal teams to optimize software projects, ensuring alignment with organizational goals and improved efficiency.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CIDADE NOVA -->
+    <div class="row mb-4 fade-in">
+      <div class="col-md-12">
+        <div class="card experience-card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="card-title">CIDADE NOVA</h4>
+              <span class="badge bg-primary">May 2024 – Present</span>
+            </div>
+            <p class="card-subtitle mb-2 text-muted"><strong>Role:</strong> Software Developer (Remote)</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Modernized legacy applications by migrating them from <strong>VBS</strong> and <strong>PHP</strong> to <strong>C#</strong>, improving performance and maintainability.
+              </li>
+              <li class="list-group-item">
+                Expanded the company’s digital offerings by introducing <strong>mobile applications</strong> developed with <strong>Flutter</strong>.
+              </li>
+              <li class="list-group-item">
+                Collaborated with project stakeholders to ensure successful project execution and delivery.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iMoSyS Limited -->
+    <div class="row mb-4 fade-in">
+      <div class="col-md-12">
+        <div class="card experience-card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="card-title">iMoSyS Limited</h4>
+              <span class="badge bg-primary">May 2023 – May 2024</span>
+            </div>
+            <p class="card-subtitle mb-2 text-muted"><strong>Role:</strong> Software Developer</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Led the full software development lifecycle, ensuring projects met specifications and deadlines.
+              </li>
+              <li class="list-group-item">
+                Worked on <strong>Alonda Mobile Application</strong> for payment integration, <strong>Mibawa Kanema M’manja</strong> mobile application backend development, and <strong>R4H Mobile Application</strong> route optimization and clustering algorithms.
+              </li>
+              <li class="list-group-item">
+                Architected backend systems to support client business operations and optimized processes to improve functionality and performance.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title fade-in">Contact Me</h2>
+      <p class="lead fade-in">Feel free to reach out for collaborations or opportunities!</p>
+      <div class="row">
+        <div class="col-md-6 fade-in">
+          <p><strong>Email:</strong> austinthauzeni1@gmail.com</p>
+          <p><strong>Phone:</strong> +265 897553168</p>
+        </div>
+        <div class="col-md-6 fade-in">
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/austin-thauzeni-688874260/">Austin Thauzeni</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/austinthope12">austinthope12</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Austin Thauzeni. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
